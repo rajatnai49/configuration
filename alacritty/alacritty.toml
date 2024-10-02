@@ -2,11 +2,11 @@
 TERM = "xterm-256color"
 
 [font]
-size = 14
+size = 18
 
 [font.normal]
-family = "FiraCode Nerd Font"
-style = "Regular"
+family = "Iosevka"
+style = "Light"
 
 [font.bold]
 style = "Bold"
@@ -20,8 +20,8 @@ style = "Bold Italic"
 [window]
 dynamic_padding = false
 decorations = "None"
-startup_mode = "Windowed"
-opacity = 0.9
+startup_mode = "Maximized"
+opacity = 0.8
 
 [window.padding]
 x = 12
