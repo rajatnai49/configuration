@@ -8,24 +8,15 @@ size = 18
 family = "Iosevka"
 style = "Light"
 
-[font.bold]
-style = "Bold"
-
-[font.italic]
-style = "Italic"
-
-[font.bold_italic]
-style = "Bold Italic"
-
 [window]
 dynamic_padding = false
 decorations = "None"
 startup_mode = "Maximized"
-opacity = 0.8
+opacity = 0.85
 
 [window.padding]
-x = 12
-y = 12
+x = 40
+y = 40
 
 [colors.primary]
 background = "#161617"
@@ -54,3 +45,5 @@ blue = "#b9aeda"
 magenta = "#ecaad6"
 cyan = "#f591b2"
 white = "#cac9dd"
+
+

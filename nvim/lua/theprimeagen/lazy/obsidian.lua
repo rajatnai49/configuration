@@ -23,6 +23,9 @@ return {
             min_chars = 2,
         },
 
+        ui = {
+            enable = true
+        },
 
         mappings = {
             ["gf"] = {

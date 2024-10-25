@@ -24,30 +24,23 @@ vim.api.nvim_create_user_command('Ons', function()
 end, {})
 
 vim.api.nvim_create_user_command('Ook', function(opts)
-    -- Get folder name from the arguments
     local folder_name = opts.args
 
-    -- Get current file path and name
     local current_file = vim.fn.expand('%:p')
     local file_name = vim.fn.expand('%:t')
 
-    -- Define the folder and full path where the file will be moved
     local folder_path = vim.fn.expand('~/Vaults/work/okay/' .. folder_name)
     local new_file_path = folder_path .. '/' .. file_name
 
-    -- Create the folder if it doesn't exist
     if vim.fn.isdirectory(folder_path) == 0 then
         vim.fn.mkdir(folder_path, 'p')
     end
 
-    -- Move the file to the new folder
     vim.cmd('silent! saveas ' .. new_file_path)
 
-    -- Delete the original file and close the buffer
     vim.fn.delete(current_file)
     vim.cmd('silent! bwipeout')
 
-    -- Notify the user
     print(file_name .. ' has been moved to ' .. folder_path)
 end, { nargs = 1 })
 
