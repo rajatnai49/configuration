@@ -1,0 +1,5 @@
+~/.config/alacritty/alacritty.toml
+~/.config/tmux/tmux.conf
+~/.config/nvim
+/bin/sim-sim
+~/.zshrc
