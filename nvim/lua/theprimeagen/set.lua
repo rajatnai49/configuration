@@ -32,3 +32,5 @@ vim.opt.colorcolumn = "80"
 
 vim.opt.conceallevel = 2
 
+vim.opt.spell = true
+vim.opt.spelllang = 'en_us'
