@@ -12,7 +12,7 @@ style = "Light"
 dynamic_padding = false
 decorations = "None"
 startup_mode = "Maximized"
-opacity = 0.85
+opacity = 0.95
 
 [window.padding]
 x = 40

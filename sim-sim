@@ -23,7 +23,11 @@ else
         tmux send-keys -t sim-sim "cd $VAULT_DIR" C-m
         tmux send-keys -t sim-sim "nvim -c 'e notes/to-do.md'" C-m
 
-        tmux attach -t sim-sim
+        if [ -n "$TMUX" ]; then
+            tmux switch-client -t sim-sim
+        else
+            tmux attach -t sim-sim
+        fi
     fi
 fi
 
