@@ -5,45 +5,48 @@ TERM = "xterm-256color"
 size = 20
 
 [font.normal]
-family = "Iosevka"
-style = "Light"
+family = "Victor Mono"
+style = "Medium Oblique"
 
 [window]
 dynamic_padding = false
 decorations = "None"
 startup_mode = "Maximized"
-# opacity = 0.95
+opacity = 0.95
+blur = true
 
 [window.padding]
 x = 40
 y = 40
 
+[selection]
+save_to_clipboard = true
+
 [colors.primary]
-background = "#161617"
-foreground = "#c9c7cd"
+background = "#121214"  # Darker for higher contrast
+foreground = "#d1d0d5"  # Slightly brighter for readability
 
 [colors.cursor]
-text = "#c9c7cd"
-cursor = "#757581"
+text = "#121214"
+cursor = "#d6d6e1"  # More visible cursor
 
 [colors.normal]
-black = "#27272a"
-red = "#f5a191"
-green = "#90b99f"
-yellow = "#e6b99d"
-blue = "#aca1cf"
-magenta = "#e29eca"
-cyan = "#ea83a5"
-white = "#c1c0d4"
+black   = "#1e1e21"  # Darker for better contrast
+red     = "#ff9580"  # More vibrant red
+green   = "#99c794"  # Balanced green
+yellow  = "#61afef"  # Vibrant electric blue (previously yellow)
+blue    = "#ffcc66"  # Rich golden yellow (previously blue)
+magenta = "#c792ea"  # Aesthetic purple-pink
+cyan    = "#89ddff"  # Cool neon blue
+white   = "#e4e4e5"  # Softer white
 
 [colors.bright]
-black = "#353539"
-red = "#ffae9f"
-green = "#9dc6ac"
-yellow = "#f0c5a9"
-blue = "#b9aeda"
-magenta = "#ecaad6"
-cyan = "#f591b2"
-white = "#cac9dd"
-
+black   = "#2c2c30"  # Dark gray
+red     = "#ff9984"  # Brighter red
+green   = "#a5d6a7"  # Brighter green
+yellow  = "#4fa6ff"  # Brighter electric blue (previously yellow)
+blue    = "#ffdb80"  # Slightly brighter golden yellow (previously blue)
+magenta = "#e1acff"  # Brighter magenta
+cyan    = "#95e6ff"  # Icy cyan
+white   = "#ffffff"  # Pure white
 
