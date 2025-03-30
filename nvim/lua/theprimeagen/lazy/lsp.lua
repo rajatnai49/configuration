@@ -20,7 +20,8 @@ return {
             "force",
             {},
             vim.lsp.protocol.make_client_capabilities(),
-            cmp_lsp.default_capabilities())
+            cmp_lsp.default_capabilities()
+        )
 
         require("fidget").setup({})
         require("mason").setup()
@@ -29,10 +30,12 @@ return {
                 "lua_ls",
                 "rust_analyzer",
                 "gopls",
+                "tailwindcss",
+                "ruff",
+                "pyright",
             },
             handlers = {
                 function(server_name) -- default handler (optional)
-
                     require("lspconfig")[server_name].setup {
                         capabilities = capabilities
                     }
@@ -44,7 +47,7 @@ return {
                         capabilities = capabilities,
                         settings = {
                             Lua = {
-				    runtime = { version = "Lua 5.1" },
+                                runtime = { version = "Lua 5.1" },
                                 diagnostics = {
                                     globals = { "vim", "it", "describe", "before_each", "after_each" },
                                 }
@@ -52,6 +55,77 @@ return {
                         }
                     }
                 end,
+
+                ["tailwindcss"] = function()
+                    local lspconfig = require("lspconfig")
+                    lspconfig.tailwindcss.setup {
+                        capabilities = capabilities,
+                        root_dir = function(fname)
+                            return require('lspconfig.util').root_pattern(
+                                'assets/tailwind.config.ts',
+                                'assets/tailwind.config.js',
+                                'assets/tailwind.config.cjs',
+                                'assets/package.json',
+                                '.git'
+                            )(fname) or vim.fn.getcwd()
+                        end,
+                        settings = {
+                            tailwindCSS = {
+                                experimental = {
+                                    classRegex = {
+                                        { "class[:]%s*\"([^\"]*)\"",   1 },
+                                        { "~H\"([^\"]*)\"",            1 },
+                                        { "([\"'`][^\"'`]*.*?[\"'`])", "[\"'`]([^\"'`]*)[.*?[\"'`]" }
+                                    },
+                                },
+                                includeLanguages = {
+                                    elixir = 'html-eex',
+                                    eelixir = 'html-eex',
+                                    heex = 'html-eex',
+                                },
+                            },
+                        },
+                    }
+                end,
+
+                ["pyright"] = function()
+                    local lspconfig = require("lspconfig")
+                    lspconfig.pyright.setup {
+                        capabilities = capabilities,
+                        root_dir = function(fname)
+                            return require("lspconfig.util").root_pattern("pyproject.toml", "setup.py", "setup.cfg",
+                                "requirements.txt", ".git")(fname) or vim.fn.getcwd()
+                        end,
+                        settings = {
+                            python = {
+                                analysis = {
+                                    autoSearchPaths = true,
+                                    useLibraryCodeForTypes = true,
+                                    diagnosticMode = "workspace"
+                                }
+                            }
+                        }
+                    }
+                end,
+
+                ["ruff"] = function()
+                    local lspconfig = require("lspconfig")
+                    lspconfig.ruff.setup {
+                        capabilities = capabilities,
+                        root_dir = function(fname)
+                            return require("lspconfig.util").root_pattern("pyproject.toml", "setup.py", "setup.cfg",
+                                "requirements.txt", ".git")(fname) or vim.fn.getcwd()
+                        end,
+                        settings = {
+                            ruff = {
+                                lint = true,
+                                format = true,
+                                organizeImports = true,
+                            },
+                        },
+                    }
+                end,
+
             }
         })
 
@@ -78,7 +152,6 @@ return {
         })
 
         vim.diagnostic.config({
-            -- update_in_insert = true,
             float = {
                 focusable = false,
                 style = "minimal",

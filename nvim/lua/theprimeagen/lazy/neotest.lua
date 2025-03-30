@@ -22,7 +22,7 @@ return {
                 }
             })
 
-            vim.keymap.set("n", "<leader>tc", function()
+            vim.keymap.set("n", "<leader>tr", function()
                 neotest.run.run()
             end)
         end,

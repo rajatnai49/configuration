@@ -12,7 +12,7 @@ return {
         g.mkdp_command_for_global = 0
         g.mkdp_open_to_the_world = 0
         g.mkdp_open_ip = ''
-        g.mkdp_browser = 'firefox'
+        g.mkdp_browser = 'brave'
         g.mkdp_echo_preview_url = 0
         g.mkdp_browserfunc = ''
         g.mkdp_theme = 'dark'
@@ -23,4 +23,7 @@ return {
             disable_filename = 1
         }
     end,
+
+    -- Markdown Preview Keymap
+    vim.keymap.set("n", "<leader>mp", ":MarkdownPreviewToggle<CR>", { noremap = true, silent = true })
 }

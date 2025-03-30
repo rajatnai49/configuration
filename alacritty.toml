@@ -23,30 +23,29 @@ y = 40
 save_to_clipboard = true
 
 [colors.primary]
-background = "#121214"  # Darker for higher contrast
-foreground = "#d1d0d5"  # Slightly brighter for readability
+background = "#000000"  # Deep black background, like a night sky
+foreground = "#f0f0f0"  # Light gray for readability against the dark
 
 [colors.cursor]
-text = "#121214"
-cursor = "#d6d6e1"  # More visible cursor
+text = "#000000"       # Black cursor text
+cursor = "#FFFF00"       # Bright yellow cursor - like a streetlight
 
 [colors.normal]
-black   = "#1e1e21"  # Darker for better contrast
-red     = "#ff9580"  # More vibrant red
-green   = "#99c794"  # Balanced green
-yellow  = "#61afef"  # Vibrant electric blue (previously yellow)
-blue    = "#ffcc66"  # Rich golden yellow (previously blue)
-magenta = "#c792ea"  # Aesthetic purple-pink
-cyan    = "#89ddff"  # Cool neon blue
-white   = "#e4e4e5"  # Softer white
+black   = "#404040"       # Dark gray, like shadows between buildings
+red     = "#FF4136"       # Bright red, like neon signs
+green   = "#2ECC40"       # Vivid green, representing some natural element fighting through the city
+yellow  = "#FFDC00"       # Intense yellow, like taxi lights
+blue    = "#0074D9"       # Strong blue, like distant skyscrapers
+magenta = "#F012BE"       # Hot pink, like club signs
+cyan    = "#7FDBFF"       # Sky blue, representing the night sky reflecting on buildings
+white   = "#A9A9A9"       # Light gray, like the moon or streetlights
 
 [colors.bright]
-black   = "#2c2c30"  # Dark gray
-red     = "#ff9984"  # Brighter red
-green   = "#a5d6a7"  # Brighter green
-yellow  = "#4fa6ff"  # Brighter electric blue (previously yellow)
-blue    = "#ffdb80"  # Slightly brighter golden yellow (previously blue)
-magenta = "#e1acff"  # Brighter magenta
-cyan    = "#95e6ff"  # Icy cyan
-white   = "#ffffff"  # Pure white
-
+black   = "#707070"       # Medium gray
+red     = "#FF851B"       # Strong orange
+green   = "#3D9970"       # Muted green
+yellow  = "#FFEC3D"       # Brighter yellow
+blue    = "#39CCCC"       # Turquoise
+magenta = "#B10DC9"       # Dark purple
+cyan    = "#8EE7FF"       # Pale blue
+white   = "#FFFFFF"       # Pure white
