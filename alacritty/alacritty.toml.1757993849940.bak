@@ -1,0 +1,32 @@
+import = [
+  "/home/rajatnai49/.nvm/versions/node/v22.19.0/lib/node_modules/alacritty-themes/themes/Catppuccin-Frappe.toml"
+]
+
+[env]
+TERM = "xterm-256color"
+
+[font]
+size = 14
+
+  [font.normal]
+  family = "JetBrains Mono"
+  style = "Medium Italic"
+
+[window]
+dynamic_padding = false
+decorations = "None"
+startup_mode = "Maximized"
+opacity = 0.95
+blur = true
+
+  [window.padding]
+  x = 20
+  y = 20
+
+[selection]
+save_to_clipboard = true
+
+[general]
+import = [
+  "/home/rajatnai49/.nvm/versions/node/v22.19.0/lib/node_modules/alacritty-themes/themes/Ayu-Dark.toml"
+]
