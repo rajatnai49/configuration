@@ -102,18 +102,26 @@ return {
 
         ["pyright"] = function()
           local lspconfig = require("lspconfig")
+
           lspconfig.pyright.setup {
             capabilities = capabilities,
             root_dir = function(fname)
-              return require("lspconfig.util").root_pattern("pyproject.toml", "setup.py", "setup.cfg",
-                "requirements.txt", ".git")(fname) or vim.fn.getcwd()
+              return require("lspconfig.util").root_pattern(
+                "pyproject.toml",
+                "setup.py",
+                "setup.cfg",
+                "requirements.txt",
+                ".git"
+              )(fname) or vim.fn.getcwd()
             end,
             settings = {
               python = {
+                venvPath = ".",
+                venv = ".venv",
                 analysis = {
                   autoSearchPaths = true,
                   useLibraryCodeForTypes = true,
-                  diagnosticMode = "workspace"
+                  diagnosticMode = "workspace",
                 }
               }
             }

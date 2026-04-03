@@ -44,3 +44,7 @@ vim.api.nvim_create_user_command('Ook', function(opts)
     print(file_name .. ' has been moved to ' .. folder_path)
 end, { nargs = 1 })
 
+vim.api.nvim_create_user_command("TodayNote", function()
+  local filename = os.date("%d%m%Y") .. ".md"
+  vim.cmd("edit " .. filename)
+end, {})

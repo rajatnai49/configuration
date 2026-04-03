@@ -35,7 +35,7 @@ vim.opt.updatetime = 50
 vim.opt.colorcolumn = ""
 
 vim.opt.conceallevel = 2
-vim.opt.fixendofline = true
+vim.opt.fixendofline = false
 
 vim.opt.spell = true
 vim.opt.spelllang = 'en_us'
