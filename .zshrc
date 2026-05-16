@@ -1,13 +1,24 @@
 export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="edvardm"
-plugins=(git zsh-autosuggestions)
+plugins=(
+  git
+  sudo
+  history
+  npm
+  node
+  docker
+  fzf
+  z
+  zsh-autosuggestions
+  zsh-syntax-highlighting
+)
 source $ZSH/oh-my-zsh.sh
 
 export PATH="$HOME/.cargo/bin:/usr/local/go/bin:$PATH"
 export PATH="$(go env GOPATH)/bin:$PATH"
 
-export JAVA_HOME='/usr/lib/jvm/java-11-openjdk'
-export PATH=$JAVA_HOME/bin:$PATH
+export JAVA_HOME='/usr/lib/jvm/java-21-openjdk'
+export PATH="$JAVA_HOME/bin:$PATH"
 
 
 export PNPM_HOME="$HOME/.local/share/pnpm"
@@ -21,14 +32,16 @@ export OLLAMA_MAX_LOADED_MODELS=1
 export OLLAMA_NUM_PARALLEL=1
 
 OBSIDIAN_VAULT="$HOME/Vaults/obsidian-vault"
+export MENTAT_VAULT="$OBSIDIAN_VAULT/znotes/mentat"
 
 alias zshconfig="nvim ~/.zshrc"
 alias szsh="source ~/.zshrc"
 alias tmux="tmux -u"
 alias zed="/usr/bin/zeditor"
 
-alias notes="nvim $OBSIDIAN_VAULT/znotes/"
+alias notes="nvim -c 'cd $OBSIDIAN_VAULT/znotes' $OBSIDIAN_VAULT/znotes/"
 alias dailynote="nvim $OBSIDIAN_VAULT/znotes/daily-notes/$(date +%d%m%Y).md"
+alias m="mentat"
 
 sync_notes() {
   local msg="updated vault at $(date +%d%m%Y) $(date +%H:%M)"
@@ -44,3 +57,4 @@ sync_notes() {
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
 [ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"
+export PATH="$HOME/bin:$PATH"
